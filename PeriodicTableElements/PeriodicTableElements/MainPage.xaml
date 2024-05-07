@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             x:Class="PeriodicTableElements.MainPage"
+             xmlns:local="clr-namespace:PeriodicTableElements">
+
+    <ContentPage.BindingContext>
+        <local:ViewModel></local:ViewModel>
+    </ContentPage.BindingContext>
+
+    <Border Stroke="#321461" Background="#efeafd" Padding="{OnPlatform Default=10, Android=7,iOS=7}" StrokeShape="RoundRectangle 10" Margin="25" StrokeThickness="1.5">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9.7*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <chart:SfCartesianChart  Grid.Row="0">
+                <chart:SfCartesianChart.Title>
+                    <Grid HeightRequest="{OnPlatform Android=35,Default=55,iOS=35}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <BoxView  BackgroundColor="#9463ef" Grid.Column="0" Margin="5,0,0,0"  ></BoxView>
+                        <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
+                            <Label Text="Comparison of Atomic Number Vs Atomic Weight of the Chemical Elements" FontSize="{OnPlatform Android=12,Default=16,iOS=12}" FontAttributes="Bold" ></Label>
+                            <Label  Text="Distribution of Atomic Weight of Elements around the Periodic Table." FontSize="{OnPlatform Android=10,Default=12,iOS=12}" Margin="0,5,0,0"></Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </chart:SfCartesianChart.Title>
+
+                <chart:SfCartesianChart.Resources>
+                    <local:TooltipValueConverter x:Key="ValueConverter"/>
+                    <local:TooltipLabelConverter x:Key="labelConverter"/>
+                    <DataTemplate x:Key="tooltip">
+                        <VerticalStackLayout Padding="3,3,3,3" >
+                            <HorizontalStackLayout>
+                                <Path  HorizontalOptions="Start" 
+                                   Data="M16,0L19.8,12.200003 32,12.200003 22.1,19.700004 25.9,31.900007 16,24.400005 6.0999994,31.900007 9.9000001,19.700004 0,12.200003 12.2,12.200003z"
+                                   Stroke="White" StrokeThickness="1" Fill="#9463ef">
+                                    <Path.RenderTransform>
+                                        <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Label Text="Atomic Weight" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="14.8"/>
+                            </HorizontalStackLayout>
+
+                            <BoxView HeightRequest="2.5" HorizontalOptions="FillAndExpand" Color="Gray" Margin="0,-2,0,2"/>
+                            <HorizontalStackLayout Spacing="4">
+                                <Label HorizontalOptions="Start" Text="Range (at. wt.)&#160;&#160;&#160;&#160;&#160;: " FontAttributes="Bold" FontSize="12.8" TextColor="White"></Label>
+                                <Label Text="{Binding Item,Converter={StaticResource labelConverter},ConverterParameter = 20}" TextColor="White" FontAttributes="Bold" FontSize="12.8"/>
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="4">
+                                <Label HorizontalOptions="Start" Text="No. of Elements&#160;&#160;: " FontAttributes="Bold" FontSize="12.8" TextColor="White"></Label>
+                                <Label Text="{Binding Item,Converter={StaticResource ValueConverter}}" TextColor="White" FontAttributes="Bold" FontSize="12.8"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </chart:SfCartesianChart.Resources>
+
+                <chart:SfCartesianChart.XAxes>
+                    <chart:NumericalAxis Minimum="0" Interval="12" ShowMajorGridLines="False">
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="Atomic Weight (amu)"></chart:ChartAxisTitle>
+                        </chart:NumericalAxis.Title>
+                    </chart:NumericalAxis>
+                </chart:SfCartesianChart.XAxes>
+
+                <chart:SfCartesianChart.YAxes>
+                    <chart:NumericalAxis Minimum="0" Maximum="8" Interval="1" ShowMajorGridLines="False" >
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle Text="Number of Elements"></chart:ChartAxisTitle>
+                        </chart:NumericalAxis.Title>
+                    </chart:NumericalAxis>
+                </chart:SfCartesianChart.YAxes>
+
+                <chart:HistogramSeries ItemsSource="{Binding ElementsData}"
+                                   XBindingPath="AtomicWeight"
+                                   YBindingPath="AtomicNumber"
+                                   HistogramInterval="12"
+                                   Stroke="White"
+                                   StrokeWidth="2"   
+                                   Fill="#9463ef"
+                                   ShowDataLabels="True"
+                                   x:Name="series"
+                                   EnableTooltip="True"
+                                   TooltipTemplate="{StaticResource tooltip}">
+                    <chart:HistogramSeries.CurveStyle>
+                        <chart:ChartLineStyle StrokeDashArray="{OnPlatform Android='6,3,1',iOS='6,3,1',Default='12,3,3,3'}" Stroke="#0E5D64" StrokeWidth="2">
+                        </chart:ChartLineStyle>
+                    </chart:HistogramSeries.CurveStyle>
+                    <chart:HistogramSeries.DataLabelSettings>
+                        <chart:CartesianDataLabelSettings UseSeriesPalette="False">
+                            <chart:CartesianDataLabelSettings.LabelStyle>
+                                <chart:ChartDataLabelStyle Margin="0,20,0,0" TextColor="White" FontAttributes="Bold"/>
+                            </chart:CartesianDataLabelSettings.LabelStyle>
+                        </chart:CartesianDataLabelSettings>
+                    </chart:HistogramSeries.DataLabelSettings>
+                </chart:HistogramSeries>
+            </chart:SfCartesianChart>
+            <Label Grid.Row="1" HorizontalOptions="FillAndExpand" 
+               Text="* amu = atomic mass unit" FontAttributes="Italic" 
+               HorizontalTextAlignment="End" VerticalTextAlignment="Start" TextColor="Gray"  Margin="0,0,5,0"/>
+        </Grid>
+    </Border>
+</ContentPage>
