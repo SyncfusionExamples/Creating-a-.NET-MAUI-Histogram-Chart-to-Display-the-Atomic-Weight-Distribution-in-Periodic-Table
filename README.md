@@ -3,6 +3,7 @@ This article demonstrates how to create the .NET MAUI Histogram Chart to display
 Its aim to  create an interactive visualization of chemical elements from the periodic table. It utilizes a [Syncfusion Cartesian Charts](https://www.syncfusion.com/maui-controls/maui-cartesian-charts) to represent the relationship between atomic number and atomic weight of elements in a visually appealing manner.
 
 **Overview**
+
 The [.NET MAUI Histogram](https://www.syncfusion.com/maui-controls/maui-cartesian-charts/chart-types/maui-histogram-chart) is a chart that visually represents the distribution of a dataset. Histograms are effective tools for understanding the characteristics of a dataset because they provide valuable insights into the distribution and patterns present in the data.
 
 **Customizing the appearance of the chart**
@@ -11,7 +12,7 @@ we can customize the Histogram chart appearance to boost up the visual effect of
 
 **Histogram series customization** 
 
-We can enhance the appearance of the series by providing the Fill, Stroke and  StrokeWidth properties. 
+We can enhance the appearance of the series by providing the [Fill](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.ChartSeries.html#Syncfusion_Maui_Charts_ChartSeries_Fill), [Stroke](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.HistogramSeries.html#Syncfusion_Maui_Charts_HistogramSeries_Stroke) and  [StrokeWidth](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.XYDataSeries.html#Syncfusion_Maui_Charts_XYDataSeries_StrokeWidth) properties. 
 In addition to that we can able to customize the distribution curve appearance by using the Stroke related customization. 
 
 **Axis customization** 
