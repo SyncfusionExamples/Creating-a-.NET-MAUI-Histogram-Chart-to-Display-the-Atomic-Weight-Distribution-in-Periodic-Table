@@ -10,6 +10,10 @@ The [.NET MAUI Histogram](https://www.syncfusion.com/maui-controls/maui-cartesia
 
 we can customize the Histogram chart appearance to boost up the visual effect of the chart. 
 
+**Chart Title Customization** 
+
+Customizing the chart header empowers users to create visually appealing and informative charts that effectively communicate their data insights to others. 
+
 **Histogram series customization** 
 
 We can enhance the appearance of the series by providing the [Fill](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.ChartSeries.html#Syncfusion_Maui_Charts_ChartSeries_Fill), [Stroke](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.HistogramSeries.html#Syncfusion_Maui_Charts_HistogramSeries_Stroke) and  [StrokeWidth](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.XYDataSeries.html#Syncfusion_Maui_Charts_XYDataSeries_StrokeWidth) properties. 
@@ -19,20 +23,16 @@ In addition to that we can able to customize the distribution curve appearance b
 
 We will enhance the appearance of the axis line by initializing the chart axis. 
 
-- **Maximum:** This property sets the maximum value displayed on the respective axis. Any data points beyond this value won't be visible on the chart. 
+- **Maximum:** This property sets the maximum value displayed on the respective axis. 
 
-- **Minimum:** Conversely, the minimum value sets the lower limit of the axis, ensuring that data points below this value won't be displayed. 
+- **Minimum:** Conversely, the minimum value sets the lower limit of the axis.
 
 - **Interval:** Interval determines the spacing between major tick marks or grid lines on the axis. It helps in organizing and presenting data more clearly. 
 
-- **ShowMajorGridLines:** Toggles the visibility of gridlines. 
+- **ShowMajorGridLines:** Used to set the visibilty of the grid lines. 
 
-- **Title:** The Title property within the NumericalAxis element is used to provide a descriptive label for the axis. 
+- **Title:** Title is used to define the description data presented in chart. The unit of Atomic Weight is amu(Atomic Mass Unit) or Da (Dalton), the abbreviation of atomic weight is at. wt.
 
-
-**Chart Header Customization** 
-
-Customizing the chart header empowers users to create visually appealing and informative charts that effectively communicate their data insights to others. 
 
 **Tooltip Customization**
 
