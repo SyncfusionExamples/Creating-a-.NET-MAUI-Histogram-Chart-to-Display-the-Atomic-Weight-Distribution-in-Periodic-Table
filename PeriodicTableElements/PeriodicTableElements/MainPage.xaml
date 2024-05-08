@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
@@ -33,31 +33,6 @@
                 <chart:SfCartesianChart.Resources>
                     <local:TooltipValueConverter x:Key="ValueConverter"/>
                     <local:TooltipLabelConverter x:Key="labelConverter"/>
-                    <DataTemplate x:Key="tooltip">
-                        <VerticalStackLayout Padding="3,3,3,3" >
-                            <HorizontalStackLayout>
-                                <Path  HorizontalOptions="Start" 
-                                   Data="M16,0L19.8,12.200003 32,12.200003 22.1,19.700004 25.9,31.900007 16,24.400005 6.0999994,31.900007 9.9000001,19.700004 0,12.200003 12.2,12.200003z"
-                                   Stroke="White" StrokeThickness="1" Fill="#9463ef">
-                                    <Path.RenderTransform>
-                                        <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
-                                    </Path.RenderTransform>
-                                </Path>
-                                <Label Text="Atomic Weight" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="14.8"/>
-                            </HorizontalStackLayout>
-
-                            <BoxView HeightRequest="2.5" HorizontalOptions="FillAndExpand" Color="Gray" Margin="0,-2,0,2"/>
-                            <HorizontalStackLayout Spacing="4">
-                                <Label HorizontalOptions="Start" Text="Range (at. wt.)&#160;&#160;&#160;&#160;&#160;: " FontAttributes="Bold" FontSize="12.8" TextColor="White"></Label>
-                                <Label Text="{Binding Item,Converter={StaticResource labelConverter},ConverterParameter = 20}" TextColor="White" FontAttributes="Bold" FontSize="12.8"/>
-                            </HorizontalStackLayout>
-
-                            <HorizontalStackLayout Spacing="4">
-                                <Label HorizontalOptions="Start" Text="No. of Elements&#160;&#160;: " FontAttributes="Bold" FontSize="12.8" TextColor="White"></Label>
-                                <Label Text="{Binding Item,Converter={StaticResource ValueConverter}}" TextColor="White" FontAttributes="Bold" FontSize="12.8"/>
-                            </HorizontalStackLayout>
-                        </VerticalStackLayout>
-                    </DataTemplate>
                 </chart:SfCartesianChart.Resources>
 
                 <chart:SfCartesianChart.XAxes>
@@ -85,8 +60,35 @@
                                    Fill="#9463ef"
                                    ShowDataLabels="True"
                                    x:Name="series"
-                                   EnableTooltip="True"
-                                   TooltipTemplate="{StaticResource tooltip}">
+                                   EnableTooltip="True">
+
+                    <chart:HistogramSeries.TooltipTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout Padding="3,3,3,3" >
+                                <HorizontalStackLayout>
+                                    <Path  HorizontalOptions="Start"  
+                                           Data="M16,0L19.8,12.200003 32,12.200003 22.1,19.700004 25.9,31.900007 16,24.400005 6.0999994,31.900007 9.9000001,19.700004 0,12.200003 12.2,12.200003z"
+                                           Stroke="White" StrokeThickness="1" Fill="#9463ef">
+                                        <Path.RenderTransform>
+                                            <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                    <Label Text="Atomic Weight" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="14.8"/>
+                                </HorizontalStackLayout>
+
+                                <BoxView HeightRequest="2.5" HorizontalOptions="FillAndExpand" Color="Gray" Margin="0,-2,0,2"/>
+                                <HorizontalStackLayout Spacing="4">
+                                    <Label HorizontalOptions="Start" Text="Range (at. wt.)&#160;&#160;&#160;&#160;&#160;: " FontAttributes="Bold" FontSize="12.8" TextColor="White"></Label>
+                                    <Label Text="{Binding Item,Converter={StaticResource labelConverter},ConverterParameter = 20}" TextColor="White" FontAttributes="Bold" FontSize="12.8"/>
+                                </HorizontalStackLayout>
+
+                                <HorizontalStackLayout Spacing="4">
+                                    <Label HorizontalOptions="Start" Text="No. of Elements&#160;&#160;: " FontAttributes="Bold" FontSize="12.8" TextColor="White"></Label>
+                                    <Label Text="{Binding Item,Converter={StaticResource ValueConverter}}" TextColor="White" FontAttributes="Bold" FontSize="12.8"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </chart:HistogramSeries.TooltipTemplate>
                     <chart:HistogramSeries.CurveStyle>
                         <chart:ChartLineStyle StrokeDashArray="{OnPlatform Android='6,3,1',iOS='6,3,1',Default='12,3,3,3'}" Stroke="#0E5D64" StrokeWidth="2">
                         </chart:ChartLineStyle>
