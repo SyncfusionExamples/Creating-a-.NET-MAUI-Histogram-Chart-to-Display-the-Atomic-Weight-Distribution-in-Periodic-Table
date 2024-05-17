@@ -9,7 +9,7 @@
         <local:ViewModel></local:ViewModel>
     </ContentPage.BindingContext>
 
-    <Border Stroke="#321461" Background="#efeafd" Padding="{OnPlatform Default=10, Android=7,iOS=7}" StrokeShape="RoundRectangle 10" Margin="25" StrokeThickness="1.5">
+    <Border Stroke="#321461"  Padding="{OnPlatform Default=10, Android=7,iOS=7}" StrokeShape="RoundRectangle 10" Margin="25" StrokeThickness="1.5">
         <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="9.7*"></RowDefinition>
@@ -90,7 +90,7 @@
                         </DataTemplate>
                     </chart:HistogramSeries.TooltipTemplate>
                     <chart:HistogramSeries.CurveStyle>
-                        <chart:ChartLineStyle StrokeDashArray="{OnPlatform Android='6,3,1',iOS='6,3,1',Default='12,3,3,3'}" Stroke="#0E5D64" StrokeWidth="2">
+                        <chart:ChartLineStyle StrokeDashArray="{OnPlatform Android='6,3,1',iOS='6,3,1',Default='12,3,3,3'}" Stroke="#f21120" StrokeWidth="2">
                         </chart:ChartLineStyle>
                     </chart:HistogramSeries.CurveStyle>
                     <chart:HistogramSeries.DataLabelSettings>
