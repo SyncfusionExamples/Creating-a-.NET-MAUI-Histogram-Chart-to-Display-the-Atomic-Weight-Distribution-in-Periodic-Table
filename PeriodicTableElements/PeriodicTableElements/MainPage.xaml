@@ -33,6 +33,7 @@
                 <chart:SfCartesianChart.Resources>
                     <local:TooltipValueConverter x:Key="ValueConverter"/>
                     <local:TooltipLabelConverter x:Key="labelConverter"/>
+                    <x:String x:Key="starGeometry">M16,0L19.8,12.200003 32,12.200003 22.1,19.700004 25.9,31.900007 16,24.400005 6.0999994,31.900007 9.9000001,19.700004 0,12.200003 12.2,12.200003z</x:String>
                 </chart:SfCartesianChart.Resources>
 
                 <chart:SfCartesianChart.XAxes>
@@ -67,7 +68,7 @@
                             <VerticalStackLayout Padding="3,3,3,3" >
                                 <HorizontalStackLayout>
                                     <Path  HorizontalOptions="Start"  
-                                           Data="M16,0L19.8,12.200003 32,12.200003 22.1,19.700004 25.9,31.900007 16,24.400005 6.0999994,31.900007 9.9000001,19.700004 0,12.200003 12.2,12.200003z"
+                                           Data="{StaticResource starGeometry}"
                                            Stroke="White" StrokeThickness="1" Fill="#9463ef">
                                         <Path.RenderTransform>
                                             <ScaleTransform ScaleX="0.6" ScaleY="0.6"/>
