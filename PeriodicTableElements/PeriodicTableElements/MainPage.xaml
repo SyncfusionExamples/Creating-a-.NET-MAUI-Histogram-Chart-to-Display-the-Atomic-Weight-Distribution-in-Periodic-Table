@@ -24,8 +24,8 @@
                         </Grid.ColumnDefinitions>
                         <BoxView  BackgroundColor="#9463ef" Grid.Column="0" Margin="5,0,0,0"  ></BoxView>
                         <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
-                            <Label Text="Comparison of Atomic Number Vs Atomic Weight of the Chemical Elements" FontSize="{OnPlatform Android=12,Default=16,iOS=12}" FontAttributes="Bold" ></Label>
-                            <Label  Text="Distribution of Atomic Weight of Elements around the Periodic Table." FontSize="{OnPlatform Android=10,Default=12,iOS=12}" Margin="0,5,0,0"></Label>
+                            <Label Text="Analysis of Atomic Weights of Chemical Elements in the Periodic Table." FontSize="{OnPlatform Android=12,Default=16,iOS=12}" FontAttributes="Bold" ></Label>
+                            <Label  Text="Distribution of Atomic Weight of Elements across the Periodic Table." FontSize="{OnPlatform Android=10,Default=12,iOS=12}" Margin="0,5,0,0"></Label>
                         </VerticalStackLayout>
                     </Grid>
                 </chart:SfCartesianChart.Title>
