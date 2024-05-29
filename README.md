@@ -38,7 +38,8 @@ We will enhance the appearance of the axis line by initializing the chart axis.
 
 The TooltipTemplate property allows users to define a custom layout and content for the tooltip. It specifies a data template that determines how the tooltip appears and what information it displays. 
 
-![Histogram_Windows_Gif](https://github.com/SyncfusionExamples/Creating-a-.NET-MAUI-Histogram-Chart-to-Display-the-Atomic-Weight-Distribution-in-Periodic-Table/assets/113962276/a7f4e375-e0e4-41cd-88d4-90eab63c783e)
+
+![BlogOutput](https://github.com/SyncfusionExamples/Creating-a-.NET-MAUI-Histogram-Chart-to-Display-the-Atomic-Weight-Distribution-in-Periodic-Table/assets/113962276/47d58e77-45c3-4db6-b0a3-bc06ad281dcb)
 
 
 ## Troubleshooting
