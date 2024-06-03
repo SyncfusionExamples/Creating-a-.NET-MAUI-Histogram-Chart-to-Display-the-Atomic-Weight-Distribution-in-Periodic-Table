@@ -48,4 +48,4 @@ The TooltipTemplate property allows users to define a custom layout and content 
 
 If you are facing a path too long exception when building this example project, close Visual Studio and rename the repository to short and build the project.
 
-For a step-by-step procedure, refer to the [Periodic Table Elements]() blog post.
+For a step-by-step procedure, refer to the [Periodic Table Elements](https://www.syncfusion.com/blogs/post/maui-histogram-chart-periodic-table) blog post.
